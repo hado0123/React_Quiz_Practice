@@ -1,2 +1,1 @@
-# react_quiz
-# React_Quiz_Practice
+# React 실전 퀴즈
