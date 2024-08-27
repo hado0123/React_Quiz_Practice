@@ -8,7 +8,7 @@ function Quiz02_sol() {
 
    return (
       <div>
-         <img src={step1} width="150" style={{ display: 'block' }} />
+         <img src={step1} width="150" style={{ display: name === '이상해씨' ? 'block' : 'none' }} />
          <br />
          <img src={step2} width="150" style={{ display }} />
          <br />
