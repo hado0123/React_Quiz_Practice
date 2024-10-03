@@ -1,52 +1,56 @@
 import React, { useState } from 'react'
-import './App.css'
 
-const Quiz01_sol = () => {
-   const [pokemons, setPoke] = useState([
-      { id: 1, name: '피카츄', img: '/images/피카츄.png' },
-      { id: 2, name: '메타몽', img: '/images/메타몽.png' },
-      { id: 3, name: '파이리', img: '/images/파이리.png' },
+function Quiz01_sol() {
+   const [employees, setEmployees] = useState([
+      { id: 1, name: '김도도', dept: '개발부' },
+      { id: 2, name: '이레레', dept: '개발부' },
+      { id: 3, name: '박미미', dept: '인사부' },
+      { id: 4, name: '강파파', dept: '마케팅부' },
    ])
 
    const [inputName, setInputName] = useState('')
+   const [inputDept, setInputDept] = useState('')
    const [nextId, setNextId] = useState(5)
+   const [removeDept, setRemoveDept] = useState('')
 
-   const onChange = (e) => setInputName(e.target.value)
-
-   //concat() 2개 이상의 배열을 합치는 메소드
+   const onChangeName = (e) => setInputName(e.target.value)
+   const onChangeDept = (e) => setInputDept(e.target.value)
+   const onChangeRemoveDept = (e) => setRemoveDept(e.target.value)
 
    const onClick = () => {
-      const nextPokes = pokemons.concat({
-         id: nextId, //nextId값을 id로 설정하고
+      const nextEmployees = employees.concat({
+         id: nextId,
          name: inputName,
-         img: '/images/' + inputName + '.png',
+         dept: inputDept,
       })
-
-      setNextId(nextId + 1) //nextId에 1을 더해준다
-      setPoke(nextPokes) //pokes 값을 업데이트 한다
-      setInputName('') //inputName 비운다
+      setNextId(nextId + 1)
+      setEmployees(nextEmployees)
+      setInputName('')
+      setInputDept('')
    }
 
-   const onRemove = (id) => {
-      const nextPokes = pokemons.filter((poke) => poke.id !== id)
-      setPoke(nextPokes)
+   // 특정 부서 사원 삭제
+   const onRemoveDept = () => {
+      const nextEmployees = employees.filter((employee) => employee.dept !== removeDept)
+      setEmployees(nextEmployees)
+      setRemoveDept('')
    }
 
-   const pokesList = pokemons.map((poke) => (
-      <li key={poke.id} onDoubleClick={() => onRemove(poke.id)}>
-         <div>
-            <img src={poke.img} alt={poke.name} width="130" />
-            <p>{poke.name}</p>
-         </div>
+   const employeeList = employees.map((employee) => (
+      <li key={employee.id}>
+         사원명: {employee.name}, 부서: {employee.dept}
       </li>
    ))
 
    return (
       <>
-         <h2>포켓몬 도감</h2>
-         <input value={inputName} onChange={onChange}></input>
-         <button onClick={onClick}>등록</button>
-         <ul>{pokesList}</ul>
+         <input placeholder="사원 이름" value={inputName} onChange={onChangeName} />
+         <input placeholder="부서" value={inputDept} onChange={onChangeDept} />
+         <button onClick={onClick}>추가</button>
+         <br />
+         <input placeholder="삭제할 부서" value={removeDept} onChange={onChangeRemoveDept} />
+         <button onClick={onRemoveDept}>부서별 삭제</button>
+         <ul>{employeeList}</ul>
       </>
    )
 }
