@@ -9,7 +9,7 @@ const Quiz03_sol = () => {
    ])
 
    const [inputName, setInputName] = useState('')
-   const [nextId, setNextId] = useState(5)
+   const [nextId, setNextId] = useState(4)
 
    const onChange = (e) => setInputName(e.target.value)
 
@@ -22,8 +22,8 @@ const Quiz03_sol = () => {
          img: '/images/' + inputName + '.png',
       })
 
-      setNextId(nextId + 1) //nextId에 1을 더해준다
       setPoke(nextPokes) //pokes 값을 업데이트 한다
+      setNextId(nextId + 1) //nextId에 1을 더해준다
       setInputName('') //inputName 비운다
    }
 

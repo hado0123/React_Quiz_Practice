@@ -11,6 +11,8 @@ function Quiz02_sol() {
    const [nextId, setNextId] = useState(3)
 
    const onChangeName = (e) => setInputName(e.target.value)
+
+   //select 박스에서는 option 태그의 value속성값을 가져온다
    const onChangeStatus = (e) => setInputStatus(e.target.value)
 
    const onClick = () => {
@@ -21,10 +23,13 @@ function Quiz02_sol() {
          status: inputStatus,
       })
 
-      setNextId(nextId + 1)
+      //추가된 값으로 projects state변경
       setProjects(nextProjects)
+
+      //초기화
       setInputName('')
-      setInputStatus('미완료') // 입력 필드 초기화
+      setInputStatus('미완료')
+      setNextId(nextId + 1)
    }
 
    const onRemove = (id) => {

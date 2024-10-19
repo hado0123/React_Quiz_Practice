@@ -5,14 +5,18 @@ const Quiz01_sol = () => {
    const [isRunning, setIsRunning] = useState(false)
 
    useEffect(() => {
+      console.log('useEffect..')
+
       let timerId
       if (isRunning) {
+         //1초마다 한번씩 seconds의 값을 1씩 증가
          timerId = setInterval(() => {
             setSeconds((prevSeconds) => prevSeconds + 1)
          }, 1000)
       }
 
       return () => {
+         console.log('clean up..')
          clearInterval(timerId)
       }
    }, [isRunning])
