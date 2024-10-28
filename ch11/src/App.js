@@ -1,15 +1,22 @@
-import Quiz01_sol from './Quiz01_sol'
-import Quiz02_sol from './Quiz02_sol'
-import Quiz03_sol from './Quiz03_sol'
-import Quiz04_sol from './Quiz04_sol'
-import Quiz05_sol from './Quiz05_sol'
+import Quiz01 from './Quiz01'
+// import { Provider } from 'react-redux'
+// import storeQuiz02 from './Quiz02/store'
+// import CounterComponent from './Quiz02/CounterComponent'
+// import storeQuiz03 from './Quiz03/store'
+// import TodoComponent from './Quiz03/TodoComponent'
 
 function App() {
-   return <Quiz01_sol />
-   return <Quiz02_sol />
-   return <Quiz03_sol />
-   return <Quiz04_sol />
-   return <Quiz05_sol />
+   return <Quiz01 />
+   // return (
+   //    <Provider store={storeQuiz02}>
+   //       <CounterComponent />
+   //    </Provider>
+   // )
+   // return (
+   //    <Provider store={storeQuiz03}>
+   //       <TodoComponent />
+   //    </Provider>
+   // )
 }
 
 export default App
