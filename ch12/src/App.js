@@ -1,15 +1,32 @@
-import Quiz01_sol from './Quiz01_sol'
-import Quiz02_sol from './Quiz02_sol'
-import Quiz03_sol from './Quiz03_sol'
-import Quiz04_sol from './Quiz04_sol'
-import Quiz05_sol from './Quiz05_sol'
+import { Provider } from 'react-redux'
+// 1번 퀴즈
+// import storeQuiz01 from './Quiz01/store'
+// import TodoApp from './Quiz01/TodoApp'
+
+//2번 퀴즈
+// import storeQuiz02 from './Quiz02/store'
+// import AuthStatus from './Quiz02/AuthStatus'
+
+//3번 퀴즈
+// import storeQuiz03 from './Quiz03/store'
+// import ProductList from './Quiz03/ProductList'
 
 function App() {
-   return <Quiz01_sol />
-   return <Quiz02_sol />
-   return <Quiz03_sol />
-   return <Quiz04_sol />
-   return <Quiz05_sol />
+   // return (
+   //    <Provider store={storeQuiz01}>
+   //       <TodoApp />
+   //    </Provider>
+   // )
+   // return (
+   //    <Provider store={storeQuiz02}>
+   //       <AuthStatus />
+   //    </Provider>
+   // )
+   // return (
+   //    <Provider store={storeQuiz03}>
+   //       <ProductList />
+   //    </Provider>
+   // )
 }
 
 export default App
