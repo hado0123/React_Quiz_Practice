@@ -25,14 +25,19 @@ function Quiz04_sol() {
       }))
 
       /*
-      혹은 
-      (prevState) => {
+      혹은
+      
+      // prevState: 현재 state를 가져온다
+      setDisplayStates((prevState) => {
+         console.log(prevState)
+
+         // setDisplayStates() 함수를 사용하는 것과 같은 효과
          return {
-            ...prevState,         
-            [display]: 'block',   
-            level: levelVal,   
+            ...prevState,
+            [display]: 'block',
+            level: levelVal,
          }
-      }
+      })
       */
    }
 
