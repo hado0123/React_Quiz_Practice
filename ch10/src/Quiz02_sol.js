@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+// 혹은 background-color: ${(props) => (props.color === 'blue' ? props.color : 'gray')};
+
 const Button = styled.button`
    background-color: ${(props) => props.color || 'gray'};
    color: white;

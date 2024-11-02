@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const StyledInput = styled.input.attrs({ type: 'input' })`
+const StyledInput = styled.input.attrs({ type: 'text' })`
    background-color: skyblue;
    width: 400px;
    height: 50px;
