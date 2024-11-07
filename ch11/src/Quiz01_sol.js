@@ -5,7 +5,11 @@ const initialState = []
 
 // 리듀서 함수
 function reducer(state, action) {
+   //state: 현재 state값(todos)
+   //action: dispatch에서 전달한 매개변수 값 => { type: 'add', payload: '저녁먹기'}
+   // 저녁먹기 삭제할때 action => { type: 'delete', payload: 2024-11-07 10:50:12 }
    switch (action.type) {
+      //...state를 사용해서 기존의 데이터를 계속 유지해야 한다
       case 'add':
          return [...state, { id: Date.now(), text: action.payload }]
       case 'delete':
@@ -21,7 +25,10 @@ const Quiz01_sol = () => {
 
    // 새로운 할 일 추가
    const handleAddTodo = () => {
+      // ' 저녁먹기.  ' ->  trim() 함수는 양옆의 공백을 없앤다
       if (inputValue.trim()) {
+         // dispath 사용시 데이터를 2개이상 전달할 경우 json객체로 전달
+         // dispath의 역할: action전달, reducer호출
          dispatch({ type: 'add', payload: inputValue })
          setInputValue('')
       }
