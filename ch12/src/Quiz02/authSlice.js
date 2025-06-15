@@ -9,4 +9,4 @@ const authSlice = createSlice({
 })
 
 export default authSlice
-export const { login, logout } = authSlice.actions
+export const { 여기에 코드 작성 } = authSlice.actions

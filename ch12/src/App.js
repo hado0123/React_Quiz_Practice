@@ -7,10 +7,6 @@ import { Provider } from 'react-redux'
 // import storeQuiz02 from './Quiz02/store'
 // import AuthStatus from './Quiz02/AuthStatus'
 
-//3번 퀴즈
-// import storeQuiz03 from './Quiz03/store'
-// import ProductList from './Quiz03/ProductList'
-
 function App() {
    // return (
    //    <Provider store={storeQuiz01}>
@@ -20,11 +16,6 @@ function App() {
    // return (
    //    <Provider store={storeQuiz02}>
    //       <AuthStatus />
-   //    </Provider>
-   // )
-   // return (
-   //    <Provider store={storeQuiz03}>
-   //       <ProductList />
    //    </Provider>
    // )
 }

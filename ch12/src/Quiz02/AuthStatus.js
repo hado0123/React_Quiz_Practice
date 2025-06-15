@@ -2,15 +2,25 @@ import { useSelector, useDispatch } from 'react-redux'
 import { login, logout } from './authSlice'
 
 function AuthStatus() {
-   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated)
+   const isAuthenticated = useSelector((state) => 여기에 코드 작성)
    const dispatch = useDispatch()
 
    return (
-      <div>
+      <div style={{ padding: '20px' }}>
          {isAuthenticated ? (
-         // 여기에 코드 작성
+            <div>
+               <p>로그인이 완료되었습니다!</p>
+               <button 여기에 코드 작성>
+                  로그아웃
+               </button>
+            </div>
          ) : (
-         //   여기에 코드 작성
+            <div>
+               <p>로그인하세요!</p>
+               <button 여기에 코드 작성>
+                  로그인
+               </button>
+            </div>
          )}
       </div>
    )

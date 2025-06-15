@@ -9,13 +9,14 @@ function TodoApp() {
 
    return (
       <div>
+         <h1>Todo List</h1>
          <input value={newTodo} onChange={(e) => setNewTodo(e.target.value)} placeholder="할 일 입력" />
-         <button onClick={() => dispatch(addTodo(newTodo))}>등록</button>
+         <button onClick={() => dispatch(여기에 코드 작성)}>등록</button>
          <ul>
             {todos.map((todo) => (
                <li key={todo.id}>
                   {todo.text}
-                  <button onClick={() => dispatch(removeTodo(todo.id))}>삭제</button>
+                  <button onClick={() => dispatch(여기에 코드 작성)}>삭제</button>
                </li>
             ))}
          </ul>
