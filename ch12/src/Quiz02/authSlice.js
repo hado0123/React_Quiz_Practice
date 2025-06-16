@@ -8,5 +8,5 @@ const authSlice = createSlice({
    },
 })
 
-export default authSlice
+export default authSlice.reducer
 export const { 여기에 코드 작성 } = authSlice.actions
