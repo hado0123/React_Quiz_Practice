@@ -3,12 +3,20 @@ import { useDispatch, useSelector } from 'react-redux'
 
 const TodoComponent = () => {
    const [inputValue, setInputValue] = useState('')
+
+   /* state = { 
+            todos: [{id:1 , text:'운동하기'}, {id:2, text: '공부하기'}, {id:3, text: '흑백요리사보기'}]  
+    }
+   */
+
+   // todos = [{id:1 , text:'운동하기'}, {id:3, text: '흑백요리사보기'}]
    const todos = useSelector((state) => state.todos)
    const dispatch = useDispatch()
 
    const handleAddTodo = () => {
       if (inputValue.trim()) {
-         dispatch({ type: 'addTodo', payload: inputValue })
+         // inputValue = '흑백요리사보기'
+         dispatch({ type: 'addTodo', payload: inputValue }) // action객체는 reducer의 action 매개변수로 전달
          setInputValue('')
       }
    }
@@ -24,6 +32,9 @@ const TodoComponent = () => {
          <button onClick={handleAddTodo}>추가</button>
 
          <ul>
+            {/* 
+             todos = [{id:1 , text:'운동하기'}, {id:3, text: '흑백요리사보기'}]
+            */}
             {todos.map((todo) => (
                <li key={todo.id}>
                   {todo.text} <button onClick={() => handleDeleteTodo(todo.id)}>삭제</button>
