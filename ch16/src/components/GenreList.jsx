@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchMovies } from '../../features/moviesSlice'
+import { fetchMovieGenres } from '../features/moviesSlice'
 
-const MoviesList = () => {
+const GenreList = () => {
    const dispatch = useDispatch()
-   const { movies, loading, error } = useSelector((state) => state.movies)
+   const { movieGenres, loading, error } = useSelector((state) => state.movies)
 
    useEffect(() => {
-      dispatch(fetchMovies())
+      dispatch(fetchMovieGenres())
    }, [dispatch])
 
    if (loading) return <p>Loading...</p>
@@ -15,14 +15,14 @@ const MoviesList = () => {
 
    return (
       <div>
-         <h1>Now Playing Movies</h1>
+         <h1>GenreList</h1>
          <ul>
-            {movies.map((movie) => (
-               <li key={movie.id}>{movie.title}</li>
+            {movieGenres.map((genre) => (
+               <li key={genre.id}>{genre.name}</li>
             ))}
          </ul>
       </div>
    )
 }
 
-export default MoviesList
+export default GenreList

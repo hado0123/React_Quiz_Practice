@@ -13,7 +13,7 @@ const tmdbApi = axios.create({
    },
 })
 
-// API를 통해 영화 목록을 가져오는 함수
+// 현재 상영중인 영화 가져오기
 export const getMovies = async (page = 1) => {
    const response = await tmdbApi.get('/movie/now_playing', {
       params: {
@@ -27,13 +27,23 @@ export const getMovies = async (page = 1) => {
 
 // 영화 상세 정보 가져오기
 export const getMovieDetails = async (movieId) => {
-   const response = await tmdbApi.get(`/movie/${movieId}`)
-   return response
+   // https://api.themoviedb.org/3/movie/{movie_id}
+   const response = await tmdbApi.get(`/movie/${movieId}`, {
+      //쿼리스트링
+      params: {
+         language: 'ko-KR',
+      },
+   })
+   return response //응답결과 데이터 리턴
 }
 
 // 장르 목록 가져오기
 export const getGenres = async () => {
-   const response = await tmdbApi.get('/genre/movie/list')
+   const response = await tmdbApi.get('/genre/movie/list', {
+      params: {
+         language: 'ko-KR',
+      },
+   })
    return response
 }
 

@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchMovies } from '../../features/moviesSlice'
+import { fetchMovies } from '../features/moviesSlice'
 
 const MoviesList = () => {
    const dispatch = useDispatch()
@@ -15,10 +16,12 @@ const MoviesList = () => {
 
    return (
       <div>
-         <h1>Popular Movies</h1>
+         <h1>Now Playing Movies</h1>
          <ul>
             {movies.map((movie) => (
-               <li key={movie.id}>{movie.title}</li>
+               <Link key={movie.id} to={`/detail/${movie.id}`}>
+                  <li>{movie.title}</li>
+               </Link>
             ))}
          </ul>
       </div>
